@@ -12,3 +12,7 @@ set_prop(system_app, recovery_update_prop)
 
 # Read selinux status
 allow system_app selinuxfs:file r_file_perms;
+
+# DC Dimming
+allow system_server vendor_sysfs_dc_dim:file rw_file_perms;
+add_service(system_server, dc_dimming_service);
